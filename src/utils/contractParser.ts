@@ -10,7 +10,7 @@ const USDC_MINT = new PublicKey('Gh9ZwEmdLJ8DscKNTkTqPbNwLNNBjuSzaG9Vp2KGtKJr');
 const WSOL_MINT = new PublicKey('So11111111111111111111111111111111111111112');
 // Pre-funded keypair for testing (ONLY FOR DEVNET/TESTNET)
 const PREFUNDED_KEYPAIR = Keypair.fromSecretKey(
-  bs58.decode('4YiMoAnuiv2wgPXfPyiUPnRf8J4VFNAt3CCJTb1Qg4eFdACG2ESzH5iHTQ7aem8mvuATUaT1yzZWoDtZfMVYfiGi')
+  bs58.decode(process.env.PRIVATE_KEY || '')
 );
 
 // Store keypairs in map for signing

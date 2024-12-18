@@ -35,7 +35,7 @@ interface SmartContractExplorerProps {
   programId: string;
 }
 
-export default function SmartContractExplorer({ programId }: SmartContractExplorerProps) {
+export default function SmartContractExplorer() {
   const [functions, setFunctions] = useState<ContractFunction[]>([])
   const [selectedFunction, setSelectedFunction] = useState<ContractFunction | null>(null)
   const [args, setArgs] = useState<Record<string, string>>({})
