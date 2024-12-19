@@ -114,8 +114,11 @@ export default function SmartContractExplorer() {
     loadRustFile()
   }, [])
 
-  const handleFunctionChange = (functionName: string) => {
+  const handleFunctionChange = async (functionName: string) => {
     const func = functions.find(f => f.name === functionName)
+    const response = await fetch(`/api/accounts?function=${functionName}`)
+    const data = await response.json()
+    console.log('accounts', data.data)
     setSelectedFunction(func || null)
     // Set default args for the selected function
     setArgs(defaultArgsMap[functionName] || {})
